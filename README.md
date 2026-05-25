@@ -1,8 +1,12 @@
-# React + Vite
+# Frontend - Innovatech Chile 🇨🇱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositorio contiene la aplicación cliente (Frontend) del sistema de gestión de despachos.
 
-Currently, two official plugins are available:
+## 🛠️ Especificaciones Técnicas
+- **Tecnología Base:** Node.js (SPA)
+- **Servidor de Producción:** Nginx (Imagen ultra ligera Alpine)
+- **Seguridad (IE2):** Configurado con usuario **No-Root** (`USER nginx`) en el puerto interno `8080` para mitigar riesgos de elevación de privilegios.
+- **Optimización (IE1):** Implementación de **Multi-stage build** para separar el entorno de desarrollo del código compilado final en producción.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Pipeline de Despliegue (IE4)
+Cualquier cambio sobre la rama `deploy` gatilla un flujo automatizado en GitHub Actions que compila la imagen, la sube a Docker Hub y actualiza de forma transparente el servicio en la instancia AWS EC2.
